@@ -8,5 +8,9 @@
           <module name="JavadocType">
                <property name="scope" value="public"/>
           </module>
+          <module name="ConstantName">
+	         <property name="applyToPublic" value="false"/>
+		 <property name="applyToProtected" value="false"/>
+	  </module>
      </module>
 </module>
