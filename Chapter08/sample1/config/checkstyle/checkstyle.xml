@@ -11,6 +11,7 @@
           <module name="ConstantName">
 	         <property name="applyToPublic" value="false"/>
 		 <property name="applyToProtected" value="false"/>
+		 <property name="format" value="^log(ger)?$|^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
 	  </module>
      </module>
 </module>
