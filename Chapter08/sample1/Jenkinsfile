@@ -1,4 +1,8 @@
-podTemplate(yaml: '''
+pipeline {
+     agent any
+     triggers {
+          pollSCM('* * * * *')
+      podTemplate(yaml: '''
 apiVersion: v1
 kind: Pod
 spec:
@@ -23,13 +27,6 @@ node(POD_LABEL) {
 }
 }
 }
-
-
-     
-pipeline {
-     agent any
-     triggers {
-          pollSCM('* * * * *')
      }
      stages {
           stage("Compile") {
