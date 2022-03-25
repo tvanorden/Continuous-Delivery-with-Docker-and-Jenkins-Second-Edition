@@ -27,7 +27,6 @@ chmod +x gradlew
 }
 }
 
------------
      
 pipeline {
      agent any
