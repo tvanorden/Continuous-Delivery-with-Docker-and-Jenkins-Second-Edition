@@ -5,12 +5,7 @@ metadata:
   labels:
     app: calculator
 spec:
-  replicas: 4
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 0
+  replicas: 3
   selector:
     matchLabels:
       app: calculator
@@ -21,14 +16,11 @@ spec:
     spec:
       containers:
       - name: calculator
-        image: leszko/calculator
+        image: dlambrig/week8:1.1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        readinessProbe:
-          httpGet:
-             path: /sum?a=1&b=2
-             port: 8080
+
 ---
 
 apiVersion: v1
