@@ -23,8 +23,7 @@ node(POD_LABEL) {
 }
 }
 }
-}
-}
+
 
      
 pipeline {
