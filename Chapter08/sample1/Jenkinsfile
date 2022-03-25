@@ -12,15 +12,14 @@ args:
 restartPolicy: Never
 ''') {
 node(POD_LABEL) {
-stage('gradle') {
-git 'https://github.com/dlambrig/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
-container('gradle') {
-stage('test calculator') {
-sh '''
-cd Chapter09/sample3
-chmod +x gradlew
-./gradlew acceptanceTest -D calculator.url=http://calculator-service:8080
-'''
+ stage('Build a gradle project') { 
+ container('gradle') {
+ git 'https://github.com/tvanorden/week6.git'
+ stage("Echo branch") {
+ sh """
+ echo ${env.GIT_BRANCH}
+ """
+ } 
 }
 }
 }
