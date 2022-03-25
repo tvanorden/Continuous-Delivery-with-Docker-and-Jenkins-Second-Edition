@@ -1,14 +1,3 @@
-  node(POD_LABEL) {
-    stage('Build a gradle project') {      
-      container('gradle') {
-        git 'https://github.com/tvanorden/week6.git'
-        stage("Echo branch") {
-            sh """
-            echo ${env.GIT_BRANCH}
-            """
-        }  
-
-
 pipeline {
      agent any
      triggers {
